@@ -6,19 +6,11 @@ def lalle():
     url = userUrl.get('1.0', "end").strip()
     my_data = summarise_my_article(url)
     title.config(state="normal")
-    author.config(state="normal")
-    publish_date.config(state="normal")
     summary.config(state="normal")
     sentimentt.config(state="normal")
 
     title.delete('1.0', 'end')
     title.insert('1.0', my_data['title'])
-
-    # author.delete('1.0', 'end')
-    # author.insert('1.0', my_data['authors'])
-
-    # publish_date.delete('1.0', 'end')
-    # publish_date.insert('1.0', my_data['published_date'])
 
     summary.delete('1.0', 'end')
     summary.insert('1.0', my_data['summary'])
@@ -27,8 +19,6 @@ def lalle():
     sentimentt.insert('1.0', my_data['sentiment'])
 
     title.config(state="disabled")
-    author.config(state="disabled")
-    publish_date.config(state="disabled")
     summary.config(state="disabled")
     sentimentt.config(state="disabled")
 
@@ -42,21 +32,9 @@ title = tk.Text(root, height=1, width=140)
 title.config(state="disabled", bg="#dddddd")
 title.pack()
 
-alabel = tk.Label(root, text="Author")
-alabel.pack()
-author = tk.Text(root, height=1, width=140)
-author.config(state="disabled", bg="#dddddd")
-author.pack()
-
-plabel = tk.Label(root, text="Published Date")
-plabel.pack()
-publish_date = tk.Text(root, height=1, width=140)
-publish_date.config(state="disabled", bg="#dddddd")
-publish_date.pack()
-
 slabel = tk.Label(root, text="Summary")
 slabel.pack()
-summary = tk.Text(root, height=8, width=140)
+summary = tk.Text(root, height=12, width=140)
 summary.config(state="disabled", bg="#dddddd")
 summary.pack()
 
